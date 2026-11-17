@@ -295,17 +295,17 @@ class HomeScreen extends StatelessWidget {
 class ListScreen extends StatelessWidget {
   const ListScreen({super.key});
 
-  final List<String> destinations = const [
-    'Maldives Coral Atolls - Crystal Waters',
-    'Great Barrier Reef - Marine Paradise',
-    'Santorini Deep Blue - Aegean Sea',
-    'Bora Bora Lagoon - Tropical Haven',
-    'Amalfi Coast - Mediterranean Views',
-    'Maui Ocean Coast - Pacific Escape',
-    'Seychelles Beaches - Azure Horizons',
-    'Ha Long Bay - Emerald Waters',
-    'Fiji Island Reefs - Pristine Tides',
-    'Galapagos Marine Reserve - Wildlife',
+  final List<String> animals = const [
+    'Lion',
+    'Tiger',
+    'Elephant',
+    'Monkey',
+    'Zebra',
+    'Giraffe',
+    'Bear',
+    'Rabbit',
+    'Fox',
+    'Panda',
   ];
 
   @override
@@ -318,7 +318,7 @@ class ListScreen extends StatelessWidget {
           pinned: true,
           backgroundColor: Colors.blue.shade700,
           flexibleSpace: const FlexibleSpaceBar(
-            title: Text('Popular Ocean Destinations'),
+            title: Text('Animals List'),
             centerTitle: true,
           ),
         ),
@@ -334,23 +334,23 @@ class ListScreen extends StatelessWidget {
                     child: Text('${index + 1}', style: const TextStyle(color: Colors.blue)),
                   ),
                   title: Text(
-                    destinations[index],
+                    animals[index],
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  subtitle: const Text('Tap to view travel details'),
+                  subtitle: const Text('Tap to view animal details'),
                   trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SimplePage(title: destinations[index]),
+                        builder: (context) => SimplePage(title: animals[index]),
                       ),
                     );
                   },
                 ),
               );
             },
-            childCount: destinations.length,
+            childCount: animals.length,
           ),
         ),
       ],
